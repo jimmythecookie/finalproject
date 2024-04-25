@@ -1,0 +1,230 @@
+@font-face {
+    font-family: 'Artificial Intelligence'; 
+    src: url('ArtificialIntelligencePersonalUseRegular-9YJV2.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Artificial Intelligence', sans-serif; 
+    position: relative;
+}
+
+
+body {
+font-size: 30px;
+    margin: 0;
+    background: #f8f8f8;
+}
+
+header, footer {
+    background-color: #4CAF50;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+header {
+    top: 0;
+}
+
+footer {
+    bottom: 0;
+}
+
+/*https://www.w3schools.com/tags/tag_main.asp trying new things */
+main {
+    
+    padding-top: 200px; 
+    
+    padding-bottom: 100px; 
+}
+
+.content-section {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px; 
+    padding: 20px 0; 
+    box-sizing: border-box;
+    font-family: arial;
+}
+
+
+.peril h2, .peril li {
+    color: #e74c3c;
+     background-color: black;
+}
+
+.potential h2,
+.potential li {
+    color: #3498db; 
+     background-color: black;
+}
+
+a:hover {
+    color: #f1c40f; 
+    text-decoration: underline; 
+}
+/* i'm trying to make it so it doesnt overlap but idk if it worked */
+.peril ul, .potential ul {
+    flex-basis: 48%; /* Adjusts to slightly less than half the container width */
+    padding: 20px;
+    box-sizing: border-box;
+    visibility: hidden;
+}
+
+.peril {
+    background-color: #ffdddd;
+    background: url('peril.png') no-repeat center center;
+    background-size: cover;
+}
+
+.potential {
+    background-color: #ddffdd;
+    background: url('potential.png') no-repeat center center;
+    background-size: cover;
+}
+
+.peril:hover ul, .potential:hover ul {
+    visibility: visible;
+}
+
+
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .content-section {
+        flex-direction: column;
+    }
+    
+    .peril, .potential {
+        
+        padding: 20px;
+    }
+}
+
+.plan-container {
+    margin-top: 200px;
+    font-family: arial;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center; 
+    color: #333; 
+    background: #f5f5f5; 
+}
+
+.plan-image {
+    padding-top: 200px;
+    width: 100%;
+    height: auto;
+    border-bottom: 3px solid #4cd137; 
+    background-size: cover;
+}
+
+.plan-steps {
+    text-align: left; 
+    counter-reset: step-counter; 
+    padding-left: 0;
+}
+
+.plan-steps li {
+      list-style-type:none;
+    counter-increment: step-counter; 
+    margin-bottom: 1rem; 
+    position: relative; 
+    padding-left: 35px; 
+}
+
+.plan-steps li:before {
+    content: counter(step-counter); /* Display step number */
+    position: absolute; 
+    left: 0; 
+    top: 0; 
+    background: #4cd137; 
+    color: white; 
+    width: 25px; 
+    height: 25px; 
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-section {
+    position: relative;
+    text-align: center; 
+}
+
+.hero-image {
+    width: 100%;
+    height: auto; 
+    opacity: 0; 
+    transition: opacity 2s ease-in-out; /* Smooth transition for the image to fade in */
+}
+
+.hero-description {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: #ffffff; 
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px; 
+    opacity: 0; /* Start with text transparent for the transition */
+    transition: opacity 2s ease-in-out 0.5s; /* Delayed transition to fade in after the image https://css-tricks.com/ease-out-in-ease-in-out/ */
+}
+
+/* Style for positive text */
+.positive-text {
+    color: #3498db; /* A shade of blue */
+}
+
+/* Style for negative text */
+.negative-text {
+    color: #e74c3c; /* A shade of red */
+}
+
+.hero-description:hover .positive-text {
+    color: #2980b9; /* Darker shade of blue for hover state */
+}
+
+.hero-description:hover .negative-text {
+    color: #c0392b; /* Darker shade of red for hover state */
+}
+.content {
+    position: relative; /* Make sure content is above canvas */
+    z-index: 1;
+}
